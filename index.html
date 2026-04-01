@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Library Book Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">BookFinder</span>
+      </div>
+      <p class="header-sub">Explore millions of books via Open Library</p>
+    </div>
+  </header>
+
+  <section class="search-section">
+    <div class="search-wrapper">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Search for a book, author, or topic..."
+        autocomplete="off"
+      />
+      <button id="searchBtn" class="search-btn">Search</button>
+    </div>
+  </section>
+
+  <div class="results-info" id="resultsInfo"></div>
+
+  <div class="loader-wrapper" id="loader">
+    <div class="spinner"></div>
+    <p class="loader-text">Fetching books...</p>
+  </div>
+
+
+  <div class="error-msg" id="errorMsg"></div>
+
+
+  <main class="books-grid" id="booksGrid"></main>
+
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <span class="empty-icon">🔍</span>
+    <p>No books found. Try a different search term.</p>
+  </div>
+
+  <footer class="footer">
+    <p>Powered by <a href="https://openlibrary.org" target="_blank">Open Library API</a> &nbsp;|&nbsp; Built for Individual Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
