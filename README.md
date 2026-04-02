@@ -18,7 +18,7 @@
 <br/>
 
 [![Milestone 1](https://img.shields.io/badge/Milestone%201-✅%20Complete-2ecc71?style=flat-square)]()
-[![Milestone 2](https://img.shields.io/badge/Milestone%202-🔄%20In%20Progress-3498db?style=flat-square)]()
+[![Milestone 2](https://img.shields.io/badge/Milestone%201-✅%20Complete-2ecc71?style=flat-square)]()
 [![Milestone 3](https://img.shields.io/badge/Milestone%203-⏳%20Upcoming-95a5a6?style=flat-square)]()
 [![Milestone 4](https://img.shields.io/badge/Milestone%204-⏳%20Upcoming-95a5a6?style=flat-square)]()
 
