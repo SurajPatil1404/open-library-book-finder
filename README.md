@@ -4,7 +4,7 @@
 
 <h1>📚✨ Open Library Book Finder ✨📚</h1>
 
-<p><strong>🔍 Search any book ever written &nbsp;·&nbsp; 🎯 Track your reading goals &nbsp;·&nbsp; 🌙 Beautiful dark mode</strong></p>
+<p><strong>🔍 Search any book ever written &nbsp;·&nbsp; ❤️ Save your favourites &nbsp;·&nbsp; 🌙 Beautiful dark mode</strong></p>
 
 <br/>
 
@@ -19,7 +19,7 @@
 
 [![Milestone 1](https://img.shields.io/badge/Milestone%201-✅%20Complete-2ecc71?style=flat-square)]()
 [![Milestone 2](https://img.shields.io/badge/Milestone%202-✅%20Complete-2ecc71?style=flat-square)]()
-[![Milestone 3](https://img.shields.io/badge/Milestone%203-⏳%20Upcoming-95a5a6?style=flat-square)]()
+[![Milestone 3](https://img.shields.io/badge/Milestone%203-✅%20Complete-2ecc71?style=flat-square)]()
 [![Milestone 4](https://img.shields.io/badge/Milestone%204-⏳%20Upcoming-95a5a6?style=flat-square)]()
 
 <br/>
@@ -44,9 +44,9 @@
 |----------|-----------------|
 | 🌐 API Integration | Live data fetching using `fetch` & `async/await` |
 | ⚙️ Higher-Order Functions | `map()` `filter()` `sort()` `find()` `reduce()` |
-| 🎨 UI/UX Design | Bookshelf grid, card flip animation, dark mode |
-| 💾 Data Persistence | LocalStorage for favourites, goals & preferences |
-| ⚡ Performance | Custom debounce on search input |
+| 🎨 UI/UX Design | Bookshelf grid, card animations, dark mode |
+| 💾 Data Persistence | LocalStorage for favourites & theme preference |
+| 🔍 Interactivity | Search, filter by subject, sort, save favourites |
 
 ---
 
@@ -75,24 +75,28 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 
 | ✅ Feature | 💬 Description |
 |-----------|---------------|
-| 🔍 **Smart Search** | Search by title or author with live debounced input |
-| 🃏 **Card Flip Animation** | Front → cover + title · Back → description & details |
-| 🗓️ **Sort by Publish Year** | Ascending ⬆️ or Descending ⬇️ order |
-| 🔤 **Alphabetical Sort** | A–Z or Z–A by book title |
-| 🖼️ **Cover Image Display** | Fetches cover art with a 🖼️ fallback for missing images |
-| 📭 **Empty State UI** | Friendly illustrated message when no results found |
-| ⏳ **Loading Spinner** | Smooth visual feedback ⏳ during API calls |
+| 🔍 **Smart Search** | Search by title, author, or topic via Open Library API |
+| 🗂️ **Subject Filtering** | Filter results by auto-generated subject chips using `.filter()` |
+| ↕️ **Sorting** | Sort by Title A→Z, Z→A, Year Newest, Year Oldest using `.sort()` |
+| ♥️ **Favourites** | Save and view favourite books — persisted with `localStorage` |
+| 🌙 **Dark / Light Mode** | Toggle themes — preference saved instantly via `localStorage` |
+| 🖼️ **Cover Image Display** | Fetches cover art with a friendly fallback for missing images |
+| 📭 **Empty State UI** | Clear illustrated messages when no results are found |
+| ⏳ **Loading Spinner** | Smooth visual feedback during API calls |
 | 📱 **Fully Responsive** | 📱 Mobile · 💻 Tablet · 🖥️ Desktop — all supported |
 
-### ⭐ Bonus & Advanced Features
+### ⚙️ Array Higher-Order Functions Used
 
-| 🚀 Feature | 💬 Description |
-|-----------|---------------|
-| 🎯 **Reading Goal Counter** | Click "I've Read This! ✅" to track books you've finished |
-| ❤️ **Favourites / Wishlist** | Save books to your personal 📌 "Want to Read" list |
-| 💾 **LocalStorage** | All data persists across browser sessions automatically |
-| 🌙 **Dark / Light Mode** | Toggle themes 🌙☀️ — preference saved instantly |
-| ⚡ **Debounced Search** | Prevents excessive API calls for smoother experience |
+| HOF | Where it's used |
+|-----|----------------|
+| `.map()` | Normalise API data, render card HTML, build filter chip HTML |
+| `.filter()` | Subject filtering, favourites-only view |
+| `.sort()` | All 4 sort options (title & year) |
+| `.reduce()` | Count subject frequencies to build smart filter chips |
+| `.some()` | Check if a book belongs to the active subject |
+| `.forEach()` | Rebuild favourites Set from localStorage, update chip states |
+
+> ⚠️ No `for` or `while` loops are used anywhere in the project.
 
 ---
 
@@ -101,16 +105,15 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 ```
 🌐 Frontend
 ├── 📄 HTML5          →  Semantic structure & accessibility
-├── 🎨 CSS3           →  Flexbox · Grid · Flip Animation · Media Queries
-└── ⚙️  JavaScript    →  ES6+ · Async/Await · DOM Manipulation · Modules
+├── 🎨 CSS3           →  Flexbox · Grid · Animations · Media Queries · CSS Variables
+└── ⚙️  JavaScript    →  ES6+ · Async/Await · DOM Manipulation · Array HOFs
 
 📡 API & Data
 ├── 🔄 Fetch API      →  All HTTP requests to Open Library
 └── 🔁 Array HOFs     →  filter() · map() · sort() · find() · reduce()
 
-💾 Storage & Performance
-├── 🗄️  LocalStorage  →  Favourites · Reading count · Theme preference
-└── ⚡ Debouncing     →  Custom debounce on search input
+💾 Storage
+└── 🗄️  LocalStorage  →  Favourites · Theme preference
 ```
 
 > 💡 **100% Vanilla** — No React, No frameworks, No build tools. Just clean, pure JavaScript! 🙌
@@ -124,11 +127,7 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 │
 ├── 📄  index.html        →  🏠 Main HTML layout & structure
 ├── 🎨  style.css         →  💅 All styles, animations & responsive rules
-│
-├── ⚙️   app.js           →  🚀 Entry point, event listeners & app init
-├── 📡  api.js            →  🔗 Fetch logic & Open Library API calls
-├── 🖥️   ui.js            →  🎭 DOM rendering: cards, grid & states
-├── 🔧  utils.js          →  🛠️ Debounce, sort helpers & localStorage
+├── ⚙️   script.js        →  🚀 Fetch, HOFs, sorting, filtering, dark mode & favourites
 │
 └── 📘  README.md         →  📖 You are here!
 ```
@@ -163,10 +162,10 @@ open index.html
 ## 📊 Milestone Progress
 
 ```
-✅  Milestone 1  ──  Project setup, API selection & README       📅 23rd March
-✅  Milestone 2  ──  API integration & responsive UI layout      📅 1st April
-⏳  Milestone 3  ──  Search · Filter · Sort · Dark Mode · HOFs   📅 8th April
-⏳  Milestone 4  ──  Final polish, deployment & documentation     📅 10th April
+✅  Milestone 1  ──  Project setup, API selection & README            📅 23rd March
+✅  Milestone 2  ──  API integration & responsive UI layout           📅 1st April
+✅  Milestone 3  ──  Search · Filter · Sort · Dark Mode · HOFs        📅 8th April
+⏳  Milestone 4  ──  Final polish, deployment & documentation          📅 10th April
 ```
 
 ---
