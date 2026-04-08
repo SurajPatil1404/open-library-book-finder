@@ -164,7 +164,7 @@ open index.html
 
 ```
 ✅  Milestone 1  ──  Project setup, API selection & README       📅 23rd March
-🔄  Milestone 2  ──  API integration & responsive UI layout      📅 1st April
+✅  Milestone 2  ──  API integration & responsive UI layout      📅 1st April
 ⏳  Milestone 3  ──  Search · Filter · Sort · Dark Mode · HOFs   📅 8th April
 ⏳  Milestone 4  ──  Final polish, deployment & documentation     📅 10th April
 ```
