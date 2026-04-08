@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +11,21 @@
 
   <header class="header">
     <div class="header-inner">
-      <div class="logo">
-        <span class="logo-icon">📚</span>
-        <span class="logo-text">BookFinder</span>
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">📚</span>
+          <span class="logo-text">BookFinder</span>
+        </div>
+        <div class="header-actions">
+          <button class="fav-btn" id="favToggle" onclick="toggleFavView()">
+            <span class="fav-icon">♥</span>
+            <span>Saved</span>
+            <span class="fav-count" id="favCount">0</span>
+          </button>
+          <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">
+            🌙
+          </button>
+        </div>
       </div>
       <p class="header-sub">Explore millions of books via Open Library</p>
     </div>
@@ -32,6 +44,26 @@
     </div>
   </section>
 
+  <!-- CONTROLS: Filter + Sort (hidden until results load) -->
+  <div class="controls-bar" id="controlsBar" style="display:none;">
+    <div class="controls-left">
+      <span class="controls-label">Filter:</span>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all" onclick="setFilter('all')">All</button>
+      </div>
+    </div>
+    <div class="controls-right">
+      <span class="controls-label">Sort:</span>
+      <select class="sort-select" id="sortSelect" onchange="renderBooks()">
+        <option value="relevance">Relevance</option>
+        <option value="title-az">Title A → Z</option>
+        <option value="title-za">Title Z → A</option>
+        <option value="year-new">Year (Newest)</option>
+        <option value="year-old">Year (Oldest)</option>
+      </select>
+    </div>
+  </div>
+
   <div class="results-info" id="resultsInfo"></div>
 
   <div class="loader-wrapper" id="loader">
@@ -39,12 +71,9 @@
     <p class="loader-text">Fetching books...</p>
   </div>
 
-
   <div class="error-msg" id="errorMsg"></div>
 
-
   <main class="books-grid" id="booksGrid"></main>
-
 
   <div class="empty-state" id="emptyState" style="display:none;">
     <span class="empty-icon">🔍</span>
