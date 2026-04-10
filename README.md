@@ -25,7 +25,7 @@
 
 <br/>
 
-**[🚀 Live Demo](https://surajpatil1404.github.io/open-library-book-finder/)**  |  **[💻 Source Code](https://github.com/SurajPatil1404/open-library-book-finder)**  |  **[🐛 Report a Bug](https://github.com/SurajPatil1404/open-library-book-finder/issues)**
+**[🚀 Live Demo](https://open-library-book-finder-eta.vercel.app/)**  |  **[💻 Source Code](https://github.com/SurajPatil1404/open-library-book-finder)**  |  **[🐛 Report a Bug](https://github.com/SurajPatil1404/open-library-book-finder/issues)**
 
 
 <br/>
@@ -156,7 +156,7 @@ open index.html
 🚀 The project is successfully deployed using **GitHub Pages**.
 
 🔗 **Live Demo:**
-https://surajpatil1404.github.io/open-library-book-finder/
+[https://open-library-book-finder-eta.vercel.app/]
 
 > 🌐 The application is fully functional and accessible online.
 
