@@ -4,7 +4,8 @@
 
 <h1>📚✨ Open Library Book Finder ✨📚</h1>
 
-<p><strong>🔍 Search any book ever written &nbsp;·&nbsp; ❤️ Save your favourites &nbsp;·&nbsp; 🌙 Beautiful dark mode</strong></p>
+<p><strong>🔍 Search books instantly &nbsp;·&nbsp; 📚 Explore millions of books &nbsp;·&nbsp; 📱 Fully responsive design</strong></p>
+
 
 <br/>
 
@@ -20,11 +21,12 @@
 [![Milestone 1](https://img.shields.io/badge/Milestone%201-✅%20Complete-2ecc71?style=flat-square)]()
 [![Milestone 2](https://img.shields.io/badge/Milestone%202-✅%20Complete-2ecc71?style=flat-square)]()
 [![Milestone 3](https://img.shields.io/badge/Milestone%203-✅%20Complete-2ecc71?style=flat-square)]()
-[![Milestone 4](https://img.shields.io/badge/Milestone%204-⏳%20Upcoming-95a5a6?style=flat-square)]()
+[![Milestone 4](https://img.shields.io/badge/Milestone%204-✅%20Upcoming-95a5a6?style=flat-square)]()
 
 <br/>
 
-**[🚀 Live Demo](#)** &nbsp;|&nbsp; **[💻 Source Code](https://github.com/SurajPatil1404/open-library-book-finder)** &nbsp;|&nbsp; **[🐛 Report a Bug](https://github.com/SurajPatil1404/open-library-book-finder/issues)**
+**[🚀 Live Demo](https://surajpatil1404.github.io/open-library-book-finder/)**  |  **[💻 Source Code](https://github.com/SurajPatil1404/open-library-book-finder)**  |  **[🐛 Report a Bug](https://github.com/SurajPatil1404/open-library-book-finder/issues)**
+
 
 <br/>
 
@@ -34,21 +36,24 @@
 
 ## 🌟 What is this project?
 
-**📚 Open Library Book Finder** is a fully responsive web application that connects to the **Open Library public API** — giving users access to **millions of books** from across the world, completely free, with no login or backend needed.
+**📚 Open Library Book Finder** is a fully responsive web application that connects to the **Open Library public API** — allowing users to search and explore millions of books from around the world in real-time.
 
-> 🎓 Built as part of an **Individual Web Development Project** to demonstrate real-world JavaScript skills, API integration, and modern UI/UX design.
+It displays essential book details like title, author, publish year, and cover image in a clean and modern UI.
+
+> 🎓 Built as part of an **Individual Web Development Project** to demonstrate API integration, async JavaScript, and responsive UI/UX design.
 
 ### 💡 What this project showcases:
 
-| 🏆 Skill | 📝 How it's used |
-|----------|-----------------|
-| 🌐 API Integration | Live data fetching using `fetch` & `async/await` |
-| ⚙️ Higher-Order Functions | `map()` `filter()` `sort()` `find()` `reduce()` |
-| 🎨 UI/UX Design | Bookshelf grid, card animations, dark mode |
-| 💾 Data Persistence | LocalStorage for favourites & theme preference |
-| 🔍 Interactivity | Search, filter by subject, sort, save favourites |
+| 🏆 Skill            | 📝 How it's used                                  |
+| ------------------- | ------------------------------------------------- |
+| 🌐 API Integration  | Fetching live book data using Open Library API    |
+| ⚙️ Async JavaScript | Using `async/await` for handling API requests     |
+| 🎨 UI/UX Design     | Responsive grid layout with modern styling        |
+| 🔄 DOM Manipulation | Dynamically rendering book results on the page    |
+| ⚡ Error Handling    | Handling API failures and empty states gracefully |
 
 ---
+
 
 ## 🌐 API Reference
 
@@ -71,34 +76,15 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 
 ## ✨ Features
 
-### 🔐 Core Features
+- 🔍 Search books by title, author, or keyword  
+- 📚 Displays results in a responsive grid layout  
+- 🖼️ Book cover images with fallback UI  
+- 📅 Shows publish year and author  
+- ⏳ Loading spinner during API calls  
+- ❌ Error handling for failed requests  
+- 📭 Empty state when no results found  
+- 📱 Fully responsive design
 
-| ✅ Feature | 💬 Description |
-|-----------|---------------|
-| 🔍 **Smart Search** | Search by title, author, or topic via Open Library API |
-| 🗂️ **Subject Filtering** | Filter results by auto-generated subject chips using `.filter()` |
-| ↕️ **Sorting** | Sort by Title A→Z, Z→A, Year Newest, Year Oldest using `.sort()` |
-| ♥️ **Favourites** | Save and view favourite books — persisted with `localStorage` |
-| 🌙 **Dark / Light Mode** | Toggle themes — preference saved instantly via `localStorage` |
-| 🖼️ **Cover Image Display** | Fetches cover art with a friendly fallback for missing images |
-| 📭 **Empty State UI** | Clear illustrated messages when no results are found |
-| ⏳ **Loading Spinner** | Smooth visual feedback during API calls |
-| 📱 **Fully Responsive** | 📱 Mobile · 💻 Tablet · 🖥️ Desktop — all supported |
-
-### ⚙️ Array Higher-Order Functions Used
-
-| HOF | Where it's used |
-|-----|----------------|
-| `.map()` | Normalise API data, render card HTML, build filter chip HTML |
-| `.filter()` | Subject filtering, favourites-only view |
-| `.sort()` | All 4 sort options (title & year) |
-| `.reduce()` | Count subject frequencies to build smart filter chips |
-| `.some()` | Check if a book belongs to the active subject |
-| `.forEach()` | Rebuild favourites Set from localStorage, update chip states |
-
-> ⚠️ No `for` or `while` loops are used anywhere in the project.
-
----
 
 ## 🛠️ Tech Stack
 
@@ -106,19 +92,14 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 🌐 Frontend
 ├── 📄 HTML5          →  Semantic structure & accessibility
 ├── 🎨 CSS3           →  Flexbox · Grid · Animations · Media Queries · CSS Variables
-└── ⚙️  JavaScript    →  ES6+ · Async/Await · DOM Manipulation · Array HOFs
+└── ⚙️  JavaScript    →  ES6+ · Async/Await · DOM Manipulation
 
 📡 API & Data
-├── 🔄 Fetch API      →  All HTTP requests to Open Library
-└── 🔁 Array HOFs     →  filter() · map() · sort() · find() · reduce()
-
-💾 Storage
-└── 🗄️  LocalStorage  →  Favourites · Theme preference
+└── 🔄 Fetch API      →  All HTTP requests to Open Library
 ```
 
 > 💡 **100% Vanilla** — No React, No frameworks, No build tools. Just clean, pure JavaScript! 🙌
 
----
 
 ## 📁 Project Structure
 
@@ -127,7 +108,7 @@ GET https://openlibrary.org/search.json?title=harry+potter&limit=20
 │
 ├── 📄  index.html        →  🏠 Main HTML layout & structure
 ├── 🎨  style.css         →  💅 All styles, animations & responsive rules
-├── ⚙️   script.js        →  🚀 Fetch, HOFs, sorting, filtering, dark mode & favourites
+├── ⚙️   script.js        →  🚀 Fetch logic, API calls & DOM rendering
 │
 └── 📘  README.md         →  📖 You are here!
 ```
@@ -165,18 +146,20 @@ open index.html
 ✅  Milestone 1  ──  Project setup, API selection & README            📅 23rd March
 ✅  Milestone 2  ──  API integration & responsive UI layout           📅 1st April
 ✅  Milestone 3  ──  Search · Filter · Sort · Dark Mode · HOFs        📅 8th April
-⏳  Milestone 4  ──  Final polish, deployment & documentation          📅 10th April
+✅  Milestone 4  ──  Final polish, deployment & documentation          📅 10th April
 ```
 
 ---
 
 ## 🌍 Deployment
 
-🚀 The project will be deployed using **GitHub Pages**.
+🚀 The project is successfully deployed using **GitHub Pages**.
 
-> 🔗 **Live link will be added here after Milestone 4 — stay tuned!**
+🔗 **Live Demo:**
+https://surajpatil1404.github.io/open-library-book-finder/
 
----
+> 🌐 The application is fully functional and accessible online.
+
 
 ## 👨‍💻 Author
 
